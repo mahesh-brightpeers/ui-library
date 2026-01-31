@@ -1,0 +1,9 @@
+import { toRem } from "../utils/styles.utils"
+
+export const STATE_NAME = "ST"
+export const APP_NAME = "E-Apostille"
+export const APP_NAME_ABBREVIATION = "EAP"
+export const APP_LOGO = "https://st-ems-dev1-svrs-web-ui-z420rths.s3.us-east-1.amazonaws.com/wax-seal.png"
+export const ENV = "dev"
+export const HEADER_HEIGHT = toRem(64)
+export const BREAKPOINTS = { xs: 0, sm: 600, md: 900, lg: 1280, xl: 1440 }
