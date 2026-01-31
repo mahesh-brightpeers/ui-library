@@ -28,7 +28,9 @@ export const SidebarMenu = styled(Stack)(({ theme }) => ({
     overflow: 'hidden'
 }));
 
-export const SidebarMenuItem = styled(Stack)<{ active?: boolean }>(({ active, theme }) => ({
+export const SidebarMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})<{ active?: boolean }>(({ active, theme }) => ({
     padding: theme.spacing(1),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -64,7 +66,9 @@ export const SidebarMenuItem = styled(Stack)<{ active?: boolean }>(({ active, th
     }),
 }));
 
-export const ExpandableMenuItem = styled(Stack)<{ expanded?: boolean; active?: boolean }>(({ active, theme }) => ({
+export const ExpandableMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active' && prop !== 'expanded',
+})<{ expanded?: boolean; active?: boolean }>(({ active, theme }) => ({
     padding: theme.spacing(1),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -90,7 +94,9 @@ export const ExpandableMenuItem = styled(Stack)<{ expanded?: boolean; active?: b
     }),
 }));
 
-export const ExpandArrow = styled('span')<{ expanded?: boolean }>(({ expanded, theme }) => ({
+export const ExpandArrow = styled('span', {
+    shouldForwardProp: (prop) => prop !== 'expanded',
+})<{ expanded?: boolean }>(({ expanded, theme }) => ({
     marginLeft: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -115,7 +121,9 @@ export const SubMenu = styled('div')(({ theme }) => ({
     padding: theme.spacing(1, 0),
 }));
 
-export const SubMenuItem = styled(Stack)<{ active?: boolean }>(({ active, theme }) => ({
+export const SubMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})<{ active?: boolean }>(({ active, theme }) => ({
     padding: theme.spacing(1, 1, 1, 5),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -146,7 +154,9 @@ export const SubMenuItem = styled(Stack)<{ active?: boolean }>(({ active, theme 
     }
 }));
 
-export const SidebarCollapseToggle = styled(Stack)<{ active?: boolean }>(({ theme }) => ({
+export const SidebarCollapseToggle = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})<{ active?: boolean }>(({ theme }) => ({
     padding: theme.spacing(1, 1, 1, 1),
     cursor: 'pointer',
     width: "4.5rem",

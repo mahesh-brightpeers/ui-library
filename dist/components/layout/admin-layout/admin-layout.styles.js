@@ -22,7 +22,9 @@ export const SidebarMenu = styled(Stack)(({ theme }) => ({
     padding: theme.spacing(2, 1.125, 2, 1.125),
     overflow: 'hidden'
 }));
-export const SidebarMenuItem = styled(Stack)(({ active, theme }) => ({
+export const SidebarMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})(({ active, theme }) => ({
     padding: theme.spacing(1),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -56,7 +58,9 @@ export const SidebarMenuItem = styled(Stack)(({ active, theme }) => ({
         },
     }),
 }));
-export const ExpandableMenuItem = styled(Stack)(({ active, theme }) => ({
+export const ExpandableMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active' && prop !== 'expanded',
+})(({ active, theme }) => ({
     padding: theme.spacing(1),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -81,7 +85,9 @@ export const ExpandableMenuItem = styled(Stack)(({ active, theme }) => ({
         }
     }),
 }));
-export const ExpandArrow = styled('span')(({ expanded, theme }) => ({
+export const ExpandArrow = styled('span', {
+    shouldForwardProp: (prop) => prop !== 'expanded',
+})(({ expanded, theme }) => ({
     marginLeft: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -103,7 +109,9 @@ export const SubMenuItems = styled('div')(() => ({
 export const SubMenu = styled('div')(({ theme }) => ({
     padding: theme.spacing(1, 0),
 }));
-export const SubMenuItem = styled(Stack)(({ active, theme }) => ({
+export const SubMenuItem = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})(({ active, theme }) => ({
     padding: theme.spacing(1, 1, 1, 5),
     gap: theme.spacing(1.5),
     cursor: 'pointer',
@@ -133,7 +141,9 @@ export const SubMenuItem = styled(Stack)(({ active, theme }) => ({
         }
     }
 }));
-export const SidebarCollapseToggle = styled(Stack)(({ theme }) => ({
+export const SidebarCollapseToggle = styled(Stack, {
+    shouldForwardProp: (prop) => prop !== 'active',
+})(({ theme }) => ({
     padding: theme.spacing(1, 1, 1, 1),
     cursor: 'pointer',
     width: "4.5rem",
