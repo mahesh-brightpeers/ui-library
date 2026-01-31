@@ -11,3 +11,5 @@ export declare const BREAKPOINTS: {
     lg: number;
     xl: number;
 };
+export declare const SIDEBAR_FULL_WIDTH: string;
+export declare const SIDEBAR_SHRINKED_WIDTH: string;

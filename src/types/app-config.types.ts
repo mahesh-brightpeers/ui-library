@@ -1,3 +1,5 @@
+import { AppRoute } from "./routes.types";
+
 export interface breakpointsType {
     xs: number;
     sm: number;
@@ -13,6 +15,8 @@ export interface AppConfig {
     appLogo?: string;
     environment?: string;
     headerHeight?: number;
-    sidebarWidth?: number;
+    sidebarFullWidth?: number;
+    sidebarCollpasedWidth?: number;
     breakpoints?: breakpointsType;
+    appRoutes?: Record<string, AppRoute>;
 }

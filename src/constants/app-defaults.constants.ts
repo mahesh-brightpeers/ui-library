@@ -7,3 +7,5 @@ export const APP_LOGO = "https://st-ems-dev1-svrs-web-ui-z420rths.s3.us-east-1.a
 export const ENV = "dev"
 export const HEADER_HEIGHT = toRem(64)
 export const BREAKPOINTS = { xs: 0, sm: 600, md: 900, lg: 1280, xl: 1440 }
+export const SIDEBAR_FULL_WIDTH = toRem(290)
+export const SIDEBAR_SHRINKED_WIDTH = toRem(64)
